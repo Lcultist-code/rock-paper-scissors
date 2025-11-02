@@ -38,12 +38,13 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
-const humanChoice = getHumanChoice();
-const computerChoice = getComputerChoice();
+
 
 function playGame() {
     let i=0;
     while (i<5){
+        const humanChoice = getHumanChoice();
+        const computerChoice = getComputerChoice();
         const result = playRound(humanChoice, computerChoice);
         console.log(result);
         console.log(`Score - You: ${humanScore}, Computer: ${computerScore}`);  
