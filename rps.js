@@ -19,5 +19,38 @@ function getHumanChoice() {
     return userInput;
 }
 
-console.log(getComputerChoice());
-console.log(getHumanChoice());
+let humanScore = 0;
+let computerScore = 0;
+
+function playRound(humanChoice, computerChoice) {
+    
+    if (humanChoice === computerChoice) {
+        return "It's a tie!";
+    }
+    else if ((humanChoice === "rock" && computerChoice === "scissors") ||
+             (humanChoice === "paper" && computerChoice === "rock") ||
+             (humanChoice === "scissors" && computerChoice === "paper")) {
+        humanScore++;
+        return `You win! ${humanChoice} beats ${computerChoice}.`;
+    } else {
+        computerScore++;
+        return `You lose! ${computerChoice} beats ${humanChoice}.`;
+    }
+}
+
+const humanChoice = getHumanChoice();
+const computerChoice = getComputerChoice();
+
+function playGame() {
+    let i=0;
+    while (i<5){
+        const result = playRound(humanChoice, computerChoice);
+        console.log(result);
+        console.log(`Score - You: ${humanScore}, Computer: ${computerScore}`);  
+        i++;
+    }
+    
+
+
+
+}
