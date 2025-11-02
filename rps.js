@@ -12,6 +12,12 @@ function getComputerChoice() {
     }
 }
 
+//Making a human choice simulator by prompting the user
+function getHumanChoice() {
+    let userInput = prompt("Choose rock, paper, or scissors:");
+    userInput = userInput.toLowerCase();
+    return userInput;
+}
+
 console.log(getComputerChoice());
-console.log(getComputerChoice());
-console.log(getComputerChoice());
+console.log(getHumanChoice());
